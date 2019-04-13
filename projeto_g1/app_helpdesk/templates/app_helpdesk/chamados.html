@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamados</title>
+</head>
+<body>
+<h1>Chamados</h1>
+{% for chamado in object_list %}
+    {% if chamado.status.nome == "Aberto" %}
+        <div>
+            <b>Titulo:</b> {{ chamado.titulo }} <br />
+            <b>Status:</b> {{ chamado.status }}
+        </div>
+        <hr />
+    {% endif %}
+{% endfor %}
+</body>
+</html>

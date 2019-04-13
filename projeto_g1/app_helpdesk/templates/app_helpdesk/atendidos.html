@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamados Atendidos</title>
+</head>
+<body>
+<h1>Chamados Atendidos</h1>
+{% for chamado in object_list %}
+    <div>
+        <b>Titulo:</b> {{ chamado.titulo }} <br />
+        <b>Status:</b> {{ chamado.status }}
+        {% for atendimento in chamado.get_atendimentos %}
+            <li>{{ atendimento }}</li>
+        {% endfor %}
+    </div>
+    <hr />
+{% endfor %}
+</body>
+</html>
